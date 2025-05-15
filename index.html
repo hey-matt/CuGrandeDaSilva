@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨🦄 FESTA DA NICOLE 🦄✨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Comic+Neue:wght@700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffb6e6;
+            font-family: 'Comic Neue', cursive;
+            color: #ff0095;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff00cc" d="M12 0L14.595 9.805 24 12 14.595 14.195 12 24 9.405 14.195 0 12 9.405 9.805z"/></svg>') 12 12, auto;
+            overflow-x: hidden;
+        }
+        
+        #glitter-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        .glitter {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path fill="%23ffcc00" d="M5 0L6.1 3.9 10 5 6.1 6.1 5 10 3.9 6.1 0 5 3.9 3.9z"/></svg>') no-repeat;
+            pointer-events: none;
+        }
+        
+        #header {
+            background: linear-gradient(to right, #ff66ff, #66ffff, #ffff66, #ff66ff);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 8px dashed #ff00ff;
+            box-shadow: 0 0 30px #ff66ff;
+            animation: rainbow-shadow 3s infinite;
+        }
+        
+        @keyframes rainbow-shadow {
+            0% { box-shadow: 0 0 30px #ff66ff; }
+            25% { box-shadow: 0 0 30px #66ffff; }
+            50% { box-shadow: 0 0 30px #ffff66; }
+            75% { box-shadow: 0 0 30px #ff99cc; }
+            100% { box-shadow: 0 0 30px #ff66ff; }
+        }
+        
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 
+                3px 3px 0 #fff, 
+                -3px -3px 0 #fff, 
+                3px -3px 0 #fff, 
+                -3px 3px 0 #fff,
+                5px 5px 10px rgba(255, 105, 180, 0.8);
+            color: #ff00ff;
+            letter-spacing: 2px;
+            animation: title-glow 2s infinite;
+        }
+        
+        @keyframes title-glow {
+            0% { text-shadow: 3px 3px 0 #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 0 0 10px #ff69b4; }
+            50% { text-shadow: 3px 3px 0 #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 0 0 30px #ff69b4; }
+            100% { text-shadow: 3px 3px 0 #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 0 0 10px #ff69b4; }
+        }
+        
+        #unicorn-container {
+            position: fixed;
+            bottom: 20px;
+            left: -150px;
+            animation: unicorn-run 15s linear infinite;
+            z-index: 100;
+        }
+        
+        @keyframes unicorn-run {
+            0% { left: -150px; }
+            100% { left: calc(100% + 150px); }
+        }
+        
+        .unicorn {
+            width: 150px;
+            height: 120px;
+            transform: scaleX(1);
+        }
+        
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 105, 180, 0.3);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 5px solid #ff66ff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path fill="%23ffccff" opacity="0.3" d="M15 0L18 10 30 15 18 20 15 30 12 20 0 15 12 10z"/></svg>') repeat,
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle fill="%23ff99cc" opacity="0.2" cx="10" cy="10" r="5"/></svg>') repeat;
+            z-index: -1;
+        }
+        
+        .invite-text {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #cc0088;
+            text-shadow: 1px 1px 1px #fff;
+        }
+        
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .rainbow-text {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            animation: rainbow-move 3s linear infinite;
+            background-size: 200% auto;
+        }
+        
+        @keyframes rainbow-move {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .form-container {
+            background: rgba(255, 230, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 3px dashed #ff66ff;
+        }
+        
+        .form-title {
+            font-family: 'Pacifico', cursive;
+            color: #ff0066;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-shadow: 2px 2px 0 #fff;
+        }
+        
+        input, button {
+            border-radius: 10px;
+            border: 2px solid #ff66cc;
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 5px;
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #ff00cc;
+            box-shadow: 0 0 10px #ff99cc;
+        }
+        
+        button {
+            background: linear-gradient(to bottom, #ff99cc, #ff66cc);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 0 #cc3399;
+            text-shadow: 1px 1px 1px #cc0066;
+        }
+        
+        button:hover {
+            background: linear-gradient(to bottom, #ff66cc, #ff33cc);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 0 #cc3399;
+        }
+        
+        button:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #cc3399;
+        }
+        
+        .guest-counter {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #ff0066;
+            text-shadow: 1px 1px 1px #fff;
+        }
+        
+        .guest-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 2px solid #ffccff;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: left;
+        }
+        
+        .guest-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .guest-list th {
+            background-color: #ff99cc;
+            color: white;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .guest-list td {
+            padding: 8px;
+            border-bottom: 1px dashed #ffccff;
+            text-align: center;
+            color: #cc0088;
+        }
+        
+        .marquee {
+            background-color: #ff66cc;
+            padding: 10px 0;
+            margin: 20px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px #cc0066;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .music-player {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background-color: #ff99cc;
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .balloon::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 15px;
+            background-color: #ff99cc;
+            bottom: -10px;
+            left: 15px;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+        
+        .balloon::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background-color: #cccccc;
+            bottom: -60px;
+            left: 19px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(3deg); }
+            50% { transform: translateY(-50px) rotate(-3deg); }
+        }
+        
+        #photo-booth {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 230, 255, 0.9);
+            border-radius: 15px;
+            border: 3px dashed #ff66ff;
+        }
+        
+        #photo-frame {
+            width: 300px;
+            height: 300px;
+            border: 10px solid #ff99cc;
+            margin: 20px auto;
+            position: relative;
+            background-color: #ffccff;
+            background-image: url('/api/placeholder/280/280');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            overflow: hidden;
+        }
+        
+        #photo-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.5) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.5) 75%, transparent 75%, transparent);
+            background-size: 10px 10px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        #photo-button {
+            background: linear-gradient(to bottom, #ff3399, #cc0066);
+            padding: 10px 20px;
+            font-size: 1.2em;
+            box-shadow: 0 5px 0 #990033;
+        }
+        
+        #photo-button:hover {
+            background: linear-gradient(to bottom, #ff66cc, #ff3399);
+            box-shadow: 0 7px 0 #990033;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background: linear-gradient(to right, #ff66ff, #66ffff, #ffff66, #ff66ff);
+            color: white;
+            text-shadow: 1px 1px 2px #cc0066;
+            font-weight: bold;
+            border-top: 5px dashed #ff00ff;
+        }
+        
+        .counter-bubble {
+            display: inline-block;
+            background-color: #ff3399;
+            color: white;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            margin: 0 5px;
+            font-weight: bold;
+            animation: bubble-pop 0.5s ease-out;
+        }
+        
+        @keyframes bubble-pop {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        #confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            opacity: 0.8;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff3399;
+            pointer-events: none;
+            animation: floating 3s ease-in infinite;
+            opacity: 0;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div id="glitter-container"></div>
+    <div id="confetti-container"></div>
+    
+    <div id="unicorn-container">
+        <img class="unicorn" src="/api/placeholder/150/120" alt="Unicornio">
+    </div>
+    
+    <header id="header">
+        <h1>✨ FESTA DA NICOLE ✨</h1>
+    </header>
+    
+    <div class="main-container">
+        <div class="invite-text">
+            <p>
+                <span class="sparkle">🧁</span> 
+                <span class="rainbow-text">OIIIIIIIIIIIII MEUS DOCINHOS DE NUVEM COM GLITTER EXPLOSIVO!!!</span> 
+                <span class="sparkle">🌈</span>
+            </p>
+            
+            <p>
+                ESTÁ TUDO ULTRA HIPER MEGA PRONTÍSSIMO PRA FESTA MAIS FOFUCHAAAA, MAIS CINTILANTE, 
+                MAIS CHEIA DE BRILHOS, ARCO-ÍRIS DANÇANTES E PURPURINA FLUTUANTE DO MULTIVERSOOOOO:
+                <br>
+                <span class="rainbow-text" style="font-size: 1.5em;">a ESTRELANDÍSTICA FESTA DA NICOLEEEEE!!!</span>
+            </p>
+            
+            <p>
+                <span class="sparkle">🦄</span>
+                Se você AMA glitter, AMA amor, AMA unicórnios que dançam e AMA felicidade que brilha no escuro...
+                ENTÃO ESTA É A FESTA DOS SEUS SONHOS COM AÇÚCAR, ARCO-ÍRIS E GLIMMER MÁGICO!!!
+                <span class="sparkle">✨</span>
+            </p>
+            
+            <p>
+                <span class="rainbow-text">PRIMEIRAMENTE E BRILHANTEMENTE: CUPCAKES QUE RELUZEM!!!</span> 
+                <br>Eles brilham de verdade! Com coberturas feitas de ESTRELAS DOCE-DE-LEITE INTERGALÁCTICAS,
+                corações de PURPURINA CINTILANTE e recheios tão encantados que fazem seu coração sorrir quando você morde!
+            </p>
+            
+            <p>
+                <span class="sparkle">🎉</span>
+                A FESTA VAI ACONTECER no REINO DO GLITTERCELESTE, um lugar onde o céu é rosa e azul,
+                as árvores soltam pó de fada e as nuvens são feitas de chantilly brilhante com lantejoulas comestíveis!
+                <span class="sparkle">🌸</span>
+            </p>
+            
+            <p class="rainbow-text" style="font-size: 1.3em;">
+                TODO MUNDO ESTÁ CONVIDADOOOOO!
+            </p>
+            
+            <p>
+                Tragam seus sorrisos brilhantes, sua alma cintilante e venham brilhar tanto que o sol vai pedir autógrafo!
+                <br>
+                <span class="sparkle">🌟</span>
+                Quanto mais purpurina, mais amor!
+                <span class="sparkle">🌟</span>
+            </p>
+            
+            <p>
+                <strong>P.S.:</strong> Roupa? Só se for de ESTRELA! Pode vir de fada, pônei, unicórnio ou você mesmo com glitter no rosto!
+                <br>
+                <strong>P.P.S.:</strong> Vai ter um desafio secreto ultra fofo: quem completar ganha a ESTRELA DA FOFURA SUPREMA que brilha pra sempre!!!
+                <br>
+                <strong>P.P.P.S.:</strong> EU TÔ GIRANDO DE FELICIDADE!!! MAL POSSO ESPERAR PRA VER CADA UM DE VOCÊS BRILHAR MAIS QUE O UNIVERSO!!!
+            </p>
+            
+            <p>
+                Com chuvas de purpurina, abraços cintilantes, e toneladas de glitter rosa-choque do coração,
+                <br>
+                <em style="font-size: 1.2em; color: #ff00cc;">*Pinkie Pie*</em>
+            </p>
+        </div>
+        
+        <div class="marquee">
+            <div class="marquee-content">
+                ✨ ESTRELAS ✨ PURPURINHA ✨ FELICIDADE ✨ UNICORNIOS ✨ FOFOS FOFOS FOFOS ✨ 2008 VIBES ✨ ESTRELAS ✨ PURPURINHA ✨ FELICIDADE ✨ UNICORNIOS ✨ FOFOS FOFOS FOFOS ✨ 2008 VIBES ✨
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <h2 class="form-title">✨ Confirme sua Presença ✨</h2>
+            <form id="rsvp-form">
+                <input type="text" id="name" placeholder="Seu nome superbrilhante" required>
+                <input type="number" id="age" placeholder="Sua idade mágica" min="1" max="120" required>
+                <button type="submit" id="submit-btn">CONFIRMAR COM GLITTER!</button>
+            </form>
+            
+            <div class="guest-counter">
+                Confirmações: <span id="guest-count">0</span> amigos brilhantes!
+            </div>
+            
+            <div class="guest-list">
+                <table id="guests-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome Estelar</th>
+                            <th>Idade Mágica</th>
+                        </tr>
+                    </thead>
+                    <tbody id="guests-body">
+                        <!-- Lista de convidados será inserida aqui -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div id="photo-booth">
+            <h2 class="form-title">✨ Cabine de Fotos Mágicas ✨</h2>
+            <p>Clique no botão para tirar uma foto super fofinha com decoração de unicórnio!</p>
+            
+            <div id="photo-frame"></div>
+            
+            <button id="photo-button">TIRAR FOTO BRILHANTE!</button>
+        </div>
+        
+        <div class="music-player">
+            <p>🎵 DJ PÔNEI ESTÁ TOCANDO HITS BRILHANTES! 🎵</p>
+            <button id="play-music">PLAY MÚSICA MÁGICA</button>
+        </div>
+    </div>
+    
+    <footer>
+        ✨ NICOLE'S SPARKLE PARTY 2025 ✨ BRILHE COMO NUNCA! ✨
+    </footer>
+
+    <script>
+        // Banco de dados "simulado" usando localStorage
+        let guestDatabase = JSON.parse(localStorage.getItem('guests')) || [];
+        
+        // Atualizar contador e lista de convidados
+        function updateGuestList() {
+            const guestCount = document.getElementById('guest-count');
+            const guestsBody = document.getElementById('guests-body');
+            
+            guestCount.innerHTML = '';
+            guestsBody.innerHTML = '';
+            
+            // Atualiza o contador com efeito de bolhas
+            const countStr = guestDatabase.length.toString();
+            for (let i = 0; i < countStr.length; i++) {
+                const bubble = document.createElement('span');
+                bubble.className = 'counter-bubble';
+                bubble.textContent = countStr[i];
+                guestCount.appendChild(bubble);
+            }
+            
+            // Preenche a tabela
+            guestDatabase.forEach((guest, index) => {
+                const row = document.createElement('tr');
+                
+                const cellNum = document.createElement('td');
+                cellNum.textContent = index + 1;
+                
+                const cellName = document.createElement('td');
+                cellName.textContent = guest.name;
+                
+                const cellAge = document.createElement('td');
+                cellAge.textContent = guest.age;
+                
+                row.appendChild(cellNum);
+                row.appendChild(cellName);
+                row.appendChild(cellAge);
+                
+                guestsBody.appendChild(row);
+            });
+        }
+        
+        // Inicializa a lista de convidados
+        updateGuestList();
+        
+        // Formulário de RSVP
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            
+            if (name && age) {
+                // Adiciona ao banco de dados
+                guestDatabase.push({
+                    name: name,
+                    age: parseInt(age)
+                });
+                
+                // Salva no localStorage
+                localStorage.setItem('guests', JSON.stringify(guestDatabase));
+                
+                // Atualiza a lista
+                updateGuestList();
+                
+                // Limpa o formulário
+                document.getElementById('name').value = '';
+                document.getElementById('age').value = '';
+                
+                // Cria confetes para celebrar
+                createConfetti();
+                
+                // Feedback para o usuário
+                alert('✨ YAAAAAY! ' + name + ' VAI BRILHAR NA FESTA! ✨');
+            }
+        });
+        
+        // Sistema de glitter flutuante
+        function createGlitter() {
+            const glitterContainer = document.getElementById('glitter-container');
+            const glitter = document.createElement('div');
+            glitter.className = 'glitter';
+            
+            // Posição aleatória
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            // Cor aleatória
+            const colors = ['#ff66ff', '#66ffff', '#ffff66', '#ff9999', '#99ff99'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            glitter.style.left = `${x}px`;
+            glitter.style.top = `${y}px`;
+            glitter.style.backgroundColor = color;
+            glitter.style.opacity = Math.random() * 0.7 + 0.3;
+            
+            glitterContainer.appendChild(glitter);
+            
+            // Animação de queda
+            const duration = Math.random() * 5000 + 3000;
+            let startTime = null;
+            
+            function animate(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+                
+                if (progress < duration) {
+                    const newY = y + (progress / duration) * 200;
+                    const wiggle = Math.sin(progress / 200) * 20;
+                    
+                    glitter.style.top = `${newY}px`;
+                    glitter.style.left = `${x + wiggle}px`;
+                    glitter.style.opacity = 1 - (progress / duration);
+                    
+                    requestAnimationFrame(animate);
+                } else {
+                    glitterContainer.removeChild(glitter);
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        
+        // Cria glitter periodicamente
+        setInterval(createGlitter, 300);
+        
+        // Sistema de confetes
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#ff66ff', '#66ffff', '#ffff66', '#ff9999', '#99ff99', '#ff00cc', '#00ffcc'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                const x = Math.random() * window.innerWidth;
+                const delay = Math.random() * 5;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                confetti.style.left = `${x}px`;
+                confetti.style.top = '-20px';
+                confetti.style.backgroundColor = color;
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confetti.style.width = `${Math.random() * 10 + 5}px`;
+                confetti.style.height = `${Math.random() * 10 + 10}px`;
+                confetti.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(confetti);
+                
+                // Animação de queda
+                const duration = Math.random() * 3000 + 2000;
+                let startTime = null;
+                
+                function animate(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = timestamp - startTime;
+                    
+                    if (progress < duration) {
+                        const newY = (progress / duration) * (window.innerHeight + 100);
+                        const wiggle = Math.sin(progress / 100) * 30;
+                        const rotation = (progress / duration) * 360 * (Math.random() > 0.5 ? 1 : -1);
+                        
+                        confetti.style.top = `${newY}px`;
+                        confetti.style.left = `${x + wiggle}px`;
+                        confetti.style.transform = `rotate(${rotation}deg)`;
+                        
+                        requestAnimationFrame(animate);
+                    } else {
+                        container.removeChild(confetti);
+                    }
+                }
+                
+                requestAnimationFrame(animate);
+            }
+        }
+        
+        // Cria balões flutuantes
+        function createBalloons() {
+            const container = document.querySelector('.main-container');
+            const colors = ['#ff66ff', '#66ffff', '#ffff66', '#ff9999', '#99ff99', '#ff00cc'];
+            
+            for (let i = 0; i < 5; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                
+                const x = Math.random() * 80 + 10; // percentagem para posicionamento
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const delay = Math.random() * 5;
+                
+                balloon.style.left = `${x}%`;
+                balloon.style.bottom = `${Math.random() * 20}px`;
+                balloon.style.backgroundColor = color;
+                balloon.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(balloon);
+            }
+        }
+        
+        // Cria balões ao carregar a página
+        createBalloons();
+        
+        // Sistema de corações flutuantes quando clicam em algo
+        document.addEventListener('click', function(e) {
+            for (let i = 0; i < 5; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = `${e.clientX + Math.random() * 20 - 10}px`;
+                heart.style.top = `${e.clientY + Math.random() * 20 - 10}px`;
+                
+                document.body.appendChild(heart);
+                
+                setTimeout(() => {
+                    document.body.removeChild(heart);
+                }, 3000);
+            }
+        });
+        
+        // Cabine de fotos - Funcionando agora!
+        document.getElementById('photo-button').addEventListener('click', function() {
+            const photoFrame = document.getElementById('photo-frame');
+            
+            // Array de URLs de placeholders para "fotos" diferentes
+            const photoOptions = [
+                '/api/placeholder/280/280', 
+                '/api/placeholder/280/280', 
+                '/api/placeholder/280/280'
+            ];
+            
+            // Efeito de flash
+            photoFrame.style.transition = 'all 0.1s';
+            photoFrame.style.backgroundColor = 'white';
+            
+            // Som de foto (simulado com alert)
+            setTimeout(() => {
+                // Reset do flash
+                photoFrame.style.backgroundColor = '#ffccff';
+                
+                // Troca a foto
+                const randomPhoto = photoOptions[Math.floor(Math.random() * photoOptions.length)];
+                photoFrame.style.backgroundImage = `url('${randomPhoto}')`;
+                
+                // Adiciona moldura decorativa
+                const decorations = [
+                    '✨🦄✨', '💖💫💖', '🌈✨🌈', '🎀💫🎀', '💝💫💝'
+                ];
+                const randomDecoration = decorations[Math.floor(Math.random() * decorations.length)];
+                
+                // Aplica decoração na foto
+                const overlay = document.createElement('div');
+                overlay.style.position = 'absolute';
+                overlay.style.top = '10px';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.textAlign = 'center';
+                overlay.style.fontSize = '24px';
+                overlay.innerHTML = randomDecoration;
+                
+                const bottom = document.createElement('div');
+                bottom.style.position = 'absolute';
+                bottom.style.bottom = '10px';
+                bottom.style.left = '0';
+                bottom.style.width = '100%';
+                bottom.style.textAlign = 'center';
+                bottom.style.fontSize = '18px';
+                bottom.style.fontWeight = 'bold';
+                bottom.style.color = '#ff00cc';
+                bottom.style.textShadow = '1px 1px 2px white';
+                bottom.innerHTML = 'Festa da Nicole! 💖';
+                
+                // Remove decorações antigas
+                while (photoFrame.firstChild) {
+                    photoFrame.removeChild(photoFrame.firstChild);
+                }
+                
+                // Adiciona novas decorações
+                photoFrame.appendChild(overlay);
+                photoFrame.appendChild(bottom);
+                
+                // Efeito de confete ao tirar a foto
+                createConfetti();
+                
+                // Alerta de foto tirada
+                alert('✨📸 FOTO TIRADA COM SUCESSO! VOCÊ ESTÁ BRILHANDO! 📸✨');
+            }, 300);
+        });
+        
+        // Tocador de música - Funcionando agora!
+        const playButton = document.getElementById('play-music');
+        let isPlaying = false;
+        let audio = null;
+        
+        playButton.addEventListener('click', function() {
+            if (!isPlaying) {
+                // Criar o audio se não existir
+                if (!audio) {
+                    // Como não podemos adicionar arquivos de música, vamos simular com beeps musicais
+                    audio = new (window.AudioContext || window.webkitAudioContext)();
+                    
+                    // Função para tocar notas
+                    function playNote(frequency, startTime, duration) {
+                        const oscillator = audio.createOscillator();
+                        const gainNode = audio.createGain();
+                        
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audio.destination);
+                        
+                        oscillator.type = 'sine';
+                        oscillator.frequency.value = frequency;
+                        
+                        gainNode.gain.setValueAtTime(0.3, startTime);
+                        gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+                        
+                        oscillator.start(startTime);
+                        oscillator.stop(startTime + duration);
+                    }
+                    
+                    // Toca uma melodia simples
+                    const now = audio.currentTime;
+                    const notes = [
+                        { note: 523.25, duration: 0.2 },  // C
+                        { note: 587.33, duration: 0.2 },  // D
+                        { note: 659.25, duration: 0.2 },  // E
+                        { note: 698.46, duration: 0.2 },  // F
+                        { note: 783.99, duration: 0.2 },  // G
+                        { note: 880.00, duration: 0.2 },  // A
+                        { note: 987.77, duration: 0.2 },  // B
+                        { note: 1046.50, duration: 0.3 }  // C
+                    ];
+                    
+                    // Toca as notas em sequência
+                    let timeOffset = 0;
+                    for (let i = 0; i < notes.length; i++) {
+                        playNote(notes[i].note, now + timeOffset, notes[i].duration);
+                        timeOffset += notes[i].duration;
+                    }
+                    
+                    // Repete a melodia
+                    setTimeout(() => {
+                        playButton.click();
+                    }, timeOffset * 1000 + 500);
+                }
+                
+                // Animação para o botão de música
+                playButton.textContent = "✨ TOCANDO MÚSICA MÁGICA! ✨";
+                playButton.style.animation = "rainbow-shadow 1s infinite";
+                
+                // Criar corações musicais
+                const musicInterval = setInterval(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = ['🎵', '🎶', '💖', '✨'][Math.floor(Math.random() * 4)];
+                    heart.style.left = `${Math.random() * 80 + 10}%`;
+                    heart.style.top = `${Math.random() * 300 + 100}px`;
+                    
+                    document.querySelector('.music-player').appendChild(heart);
+                    
+                    setTimeout(() => {
+                        if (heart.parentNode) {
+                            heart.parentNode.removeChild(heart);
+                        }
+                    }, 3000);
+                }, 500);
+                
+                isPlaying = true;
+                
+                // Parar a animação após um tempo
+                setTimeout(() => {
+                    clearInterval(musicInterval);
+                    playButton.textContent = "PLAY MÚSICA MÁGICA";
+                    playButton.style.animation = "";
+                    isPlaying = false;
+                }, 8000);
+            }
+        });
+        
+        // Cria um efeito de estrela piscando no título
+        setInterval(() => {
+            const h1 = document.querySelector('h1');
+            h1.innerHTML = h1.innerHTML.replace('✨', '⭐').replace('⭐', '✨');
+        }, 1000);
+        
+        // Inicializa alguns confetes ao carregar a página
+        window.addEventListener('load', () => {
+            createConfetti();
+        });
